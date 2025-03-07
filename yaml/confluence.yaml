@@ -1,0 +1,24 @@
+# This is a sample configuration file for the Confluence loader.
+# You can use this file via the `r2g2 rag loaders config set` command.
+kind: confluence
+config:
+  # Enable or disable the loader. Default is true.
+  # enabled: true
+
+  # Prune any existing data in the store prior to loading data from Confleunce. Default is false.
+  # prune: true
+
+  # The refresh rate for the loader. Must be greater than 1 hour.
+  refresh_rate: 4h
+
+  # Google Secret Manager secret containing a Confluence API key.
+  api_secret: projects/some-projects/secrets/my-confluence-api-key
+
+  # Format of retrieved data. Either "storage" (html) or "atlas" (json).
+  format: storage
+
+  # List of Confluence pages to fetch.
+  pages:
+    - https://someorg.atlassian.net/wiki/spaces/SOMESPACE/overview
+    - https://someorg.atlassian.net/wiki/spaces/SOMESPACE/pages/6301807259/Some+Page
+    - https://someorg.atlassian.net/wiki/spaces/SOMESPACE/pages/6452969596/Another+Page

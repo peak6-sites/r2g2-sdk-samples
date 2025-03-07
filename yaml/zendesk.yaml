@@ -1,0 +1,38 @@
+kind: zendesk
+config:
+  # Enable or disable the loader. Default is true.
+  # enabled: true
+
+  # Prune any existing data in the store prior to loading data from Zendesk. Default is false.
+  # prune: true
+
+  # The refresh rate for the loader. Must be greater than 1 hour.
+  refresh_rate: 4h
+
+  # Google Secret Manager secret containing a Zendesk API key.
+  # roles/secretmanager.secretAccessor must be granted on this secret to service account 'loader-zendesk@minisme-env-prod.iam.gserviceaccount.com'
+  api_secret: projects/some-projects/secrets/my-zendesk-api-key
+
+  # Base URL for the Zendesk instance.
+  base_url: https://myorg.zendesk.com
+  
+  # Include documents that are in draft status. Default is false.
+  # include_drafts: false
+  
+  # Fetch documents as plain text instead of HTML. Default is false.
+  # plain_text: false
+
+  # Zendesk catagories
+  #categories:
+  #   - category1
+  #   - category2
+
+  # Zendesk sections
+  #sections:
+  #   - section1
+  #   - section2
+
+  # Zendesk user segments to filter for
+  # user_segments:
+  #   - segment1
+  #   - segment2
