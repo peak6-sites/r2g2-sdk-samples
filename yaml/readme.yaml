@@ -1,0 +1,31 @@
+# This is a sample configuration file for the Readme loader.
+# You can use this file via the `r2g2 rag loaders config set` command.
+kind: readme
+config:
+  # Enable or disable the loader. Default is true.
+  # enabled: true
+
+  # Prune any existing data in the store prior to loading data from Confleunce. Default is false.
+  # prune: true
+
+  # The refresh rate for the loader. Must be greater than 1 hour.
+  refresh_rate: 4h
+
+  # Google Secret Manager secret containing a Readme API key.
+  # roles/secretmanager.secretAccessor must be granted on this secret to service account 'loader-readme@minisme-env-prod.iam.gserviceaccount.com'
+  api_secret: projects/some-projects/secrets/my-readme-api-key
+
+  # Project-specific API version to use.
+  api_version: "1"
+
+  # Type of resources to include.
+  # Currently only supports `guide`.
+  types: ["guide"]
+
+  # Include only specific catagories
+  # Mutually exclusive with `exclude_catagories`
+  # include_catagories: []
+
+  # Exclude specific catagories
+  # Mutually exclusive with `include_catagories`
+  # exclude_catagories: []
