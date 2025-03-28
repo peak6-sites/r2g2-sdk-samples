@@ -3,6 +3,9 @@ config:
   # Enable or disable the loader. Default is true.
   # enabled: true
 
+  # Forces the loader to overwrite files that exist in the store even if they are unchanged. Default is false
+  # overwrite: true
+
   # Prune any existing data in the store prior to loading data from Zendesk. Default is false.
   # prune: true
 
