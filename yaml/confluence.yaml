@@ -14,9 +14,10 @@ config:
   # The refresh rate for the loader. Must be greater than 1 hour.
   refresh_rate: 4h
 
-  # Google Secret Manager secret containing a Confluence API key.
+  # Google Secret Manager secret containing a user's email and their Confluence API key. The Confluence loader will automatically fetch the latest version of the secret.
+  # The secret value must be in the form of `{email}:{api-key}`.
   # roles/secretmanager.secretAccessor must be granted on this secret to service account 'loader-confluence@minisme-env-prod.iam.gserviceaccount.com'
-  api_secret: projects/some-projects/secrets/my-confluence-api-key
+  api_secret: projects/some-projects/secrets/my-confluence-api-key-secret
 
   # Format of retrieved data. Either "storage" (html) or "atlas" (json).
   format: storage
